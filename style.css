@@ -20,7 +20,9 @@ section#beaner-header {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-
+    padding: 0 20px;
+    box-sizing: border-box;
+    text-align: center;
 }
 
 .scroll-down-btn {
@@ -36,6 +38,8 @@ section#beaner-header {
 
 section#beaner-header h1 {
     color: white;
+    font-size: clamp(1.4rem, 4vw, 2.5rem);
+    line-height: 1.3;
 }
 
 .nav{
@@ -45,18 +49,23 @@ section#beaner-header h1 {
     position: fixed;
     z-index: 10000;
     width: 100%;
+    flex-wrap: wrap;
+    align-items: center;
 }
 
 .nav ul {
     list-style-type: none;
     display: flex;
     text-align: end;
-    
+    flex-wrap: wrap;
+    padding: 0 10px;
+    margin: 0;
 }
 
 .nav ul li {
     margin-right: 20px;
     margin-top: 12px;
+    margin-bottom: 8px;
 }
 
 .nav ul li a {
@@ -68,8 +77,11 @@ section#beaner-header h1 {
     flex-grow: 1;
     margin-top: 10px;
     margin-left: 20px;
+    margin-bottom: 10px;
     font-family: 'Courier New', Courier, monospace; 
     color: #e9e9e9;
+    font-size: clamp(0.85rem, 2.5vw, 1.2rem);
+    white-space: nowrap;
 }
 
 .nav ul li a:hover {
@@ -80,6 +92,8 @@ section#About {
     text-align: center;
     width: 100%;
     height: auto;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 section#About h2 {
@@ -91,6 +105,7 @@ section#About h2 {
 section#About p {
     text-align: center;
     margin-top: 10px;
+    padding: 0 10px;
 }
 
 .card-container {
@@ -111,6 +126,9 @@ section#About p {
 .icon-list {
     display: flex;
     justify-content: space-around;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 10px;
 }
 
 .icon-item i{
@@ -132,11 +150,12 @@ section#passion {
     padding: 60px 20px;
     background-color: #b3b0b0;
     text-align: center;
-    height: 75vh; 
+    height: auto;
+    min-height: 75vh;
+    box-sizing: border-box;
 }
 
 section#passion h2 {
-    
     color: #333; 
     padding-top: 0; 
     margin-bottom: 40px;
@@ -155,13 +174,12 @@ section#passion h2 {
 .service-card {
     text-align: center;
     flex-basis: calc(50% - 20px); 
-    min-width: 300px;
+    min-width: 280px;
     padding: 10px;
-    
-    
     background-color: rgb(199, 197, 197);
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     border-radius: 8px;
+    box-sizing: border-box;
 }
 
 .icon-circle {
@@ -186,12 +204,11 @@ section#passion h2 {
     transform: rotate(360deg);
 }
 
-/* --- Styling Umum Section EXPERIENCE --- */
 section#experience {
-    /* Hapus height: 75vh; agar tinggi section sesuai konten */
     padding: 60px 20px;
     background-color: #dad5d5;
     text-align: center;
+    box-sizing: border-box;
 }
 
 .header-experience {
@@ -199,7 +216,7 @@ section#experience {
 }
 
 section#experience h2 {
-    padding-top: 0; /* Tidak perlu padding-top 40px */
+    padding-top: 0;
     margin-bottom: 20px;
     font-size: 2.2em;
     font-family: 'Georgia', serif;
@@ -212,29 +229,30 @@ section#experience p {
     color: #555;
 }
 
-/* --- TATA LETAK UTAMA: Pembagian Dua Kolom --- */
 .main-container {
     display: flex;
     justify-content: center;
     max-width: 1200px;
     margin: 40px auto;
     padding: 20px;
+    flex-wrap: wrap;
+    gap: 30px;
 }
 
 .tech-column {
-    flex: 2; /* Kolom Kiri (Teknologi) mengambil 2/3 ruang */
+    flex: 2;
     padding-right: 40px;
-    text-align: left; /* Rata kiri untuk judul SOME TECHNOLOGIES */
+    text-align: left;
+    min-width: 280px;
 }
 
 .work-column {
-    flex: 1; /* Kolom Kanan (Organisasi) mengambil 1/3 ruang */
+    flex: 1;
     padding-left: 40px;
-    text-align: center; /* Memusatkan logo organisasi */
+    text-align: center;
+    min-width: 200px;
 }
 
-
-/* --- TATA LETAK LOGO (Container Grid) --- */
 .logo-container {
     display: grid;
     grid-template-columns: repeat(3, 1fr); 
@@ -243,24 +261,19 @@ section#experience p {
     margin: 0; 
 }
 
-/* --- EFEK GRAYSCALE DAN HOVER --- */
 .logo-img {
     max-width: 100%;
     height: auto;
-    /* FITUR ABU-ABU */
     filter: grayscale(100%);
     opacity: 0.7;
-    /* TRANSISI MULUS */
     transition: filter 0.5s ease-in-out, opacity 0.5s ease-in-out, transform 0.5s ease;
 }
 
 .logo-img:hover {
-    /* mengembalikan warna gambar logo */
     filter: grayscale(0%);
     opacity: 1;
-    transform: scale(1.1);  
+    transform: scale(1.1);  
 }
-
 
 .work-list {
     display: flex;
@@ -281,10 +294,16 @@ section#check-my-resume {
     padding: 60px 20px;
     background-image: url(christopher-gower-m_HRfLhgABo-unsplash.jpg);
     width: 100%;
-    height: 45vh;
+    min-height: 45vh;
+    height: auto;
     background-attachment: fixed;
     background-size: cover;
     color: white;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }
 
 section#check-my-resume a {
@@ -303,7 +322,9 @@ section#portofolio {
     padding: 60px 20px;
     background-color: rgb(255, 255, 255);
     text-align: center;
-    height: 100vh;
+    min-height: 100vh;
+    height: auto;
+    box-sizing: border-box;
 }
 
 section#portofolio h2 {
@@ -321,7 +342,7 @@ section#portofolio h2 {
 
 .grid-portofolio {
     display: grid;
-    grid-template-columns:repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     gap: 30px;
     max-width: 1000px;
     margin: 0 auto;
@@ -393,9 +414,10 @@ section#portofolio h2 {
     margin: 5% auto; 
     padding: 20px;
     border: 1px solid #888;
-    width: 80%; 
+    width: 90%; 
     max-width: 900px; 
     border-radius: 8px;
+    box-sizing: border-box;
 }
 
 .close-btn {
@@ -448,11 +470,11 @@ section#portofolio h2 {
     background-color: white;
 }
 
-/* --- Styling Section dan Konten --- */
 #contact {
     padding: 100px 20px;
-    background-color: #f8ffef; /* Latar belakang abu-abu sangat muda */
+    background-color: #f8ffef;
     text-align: center;
+    box-sizing: border-box;
 }
 
 .contact-content {
@@ -462,7 +484,7 @@ section#portofolio h2 {
 
 #contact h2 {
     font-size: 2.2em;
-    font-weight: 400; /* Lebih ringan dari heading utama */
+    font-weight: 400;
     color: #444;
     margin-bottom: 20px;
 }
@@ -474,18 +496,14 @@ section#portofolio h2 {
     margin-bottom: 40px;
 }
 
-/* --- Styling Ikon --- */
 .send-icon-container i {
     font-size: 3em;
     color: #333;
     margin-bottom: 30px;
-    display: block; /* Penting untuk animasi transform */
-    
-    /* --- MENERAPKAN ANIMASI --- */
+    display: block;
     animation: dropIn 1.5s ease-out; 
 }
 
-/* --- Styling Tombol --- */
 .contact-btn {
     display: inline-block;
     padding: 10px 30px;
@@ -501,34 +519,28 @@ section#portofolio h2 {
     color: white;
 }
 
-/* --- DEFINISI ANIMASI (Keyframes) --- */
 @keyframes dropIn {
     0% {
-        /* Posisi awal: 100px di atas posisi akhir dan tidak terlihat */
         transform: translateY(-100px); 
         opacity: 0;
     }
     50% {
-        /* Setengah jalan: Ikon mulai terlihat */
         opacity: 0.5;
     }
     100% {
-        /* Posisi akhir: Posisi normalnya dan terlihat penuh */
         transform: translateY(0);
         opacity: 1;
     }
 }
 
-/* --- Styling Dasar Footer --- */
 #main-footer {
-    background-color: #333; /* Warna latar belakang gelap */
+    background-color: #333;
     padding: 40px 20px;
     text-align: center;
     color: #ccc;
     font-family: Arial, sans-serif;
 }
 
-/* --- Styling Teks Hak Cipta --- */
 .footer-copyright {
     font-size: 0.8em;
     color: #888;
@@ -541,11 +553,12 @@ section#portofolio h2 {
     margin: 0 5px;
 }
 
-/* --- Ikon Media Sosial --- */
 .social-links {
     display: flex;
     justify-content: center;
     margin-bottom: 30px;
+    flex-wrap: wrap;
+    gap: 8px;
 }
 
 .social-btn {
@@ -555,7 +568,7 @@ section#portofolio h2 {
     width: 40px;
     height: 40px;
     margin: 0 5px;
-    background-color: #444; /* Warna latar belakang tombol sosial */
+    background-color: #444;
     color: white;
     text-decoration: none;
     border-radius: 4px;
@@ -564,10 +577,9 @@ section#portofolio h2 {
 }
 
 .social-btn:hover {
-    background-color: #007bff; /* Contoh warna hover */
+    background-color: #007bff;
 }
 
-/* --- Roket dan Efek Hover Khusus --- */
 .rocket-container {
     position: relative;
     display: inline-block;
@@ -584,26 +596,248 @@ section#portofolio h2 {
 
 .rocket-text {
     position: absolute;
-    bottom: -10px; /* Atur posisi teks di atas roket */
+    bottom: -10px;
     left: 50%;
     transform: translateX(-50%);
-    
     font-size: 0.8em;
     font-weight: bold;
     color: white;
-    white-space: nowrap; /* Penting: mencegah teks turun baris */
-    
-    /* Efek Kunci: Teks Awalnya Tersembunyi */
+    white-space: nowrap;
     opacity: 0;
     transition: opacity 0.3s, top 0.3s;
 }
 
 .rocket-container:hover .rocket-icon {
-    opacity: 0.5; /* Merdiumkan ikon roket saat hover */
+    opacity: 0.5;
 }
 
 .rocket-container:hover .rocket-text {
-    /* Efek Kunci: Tampilkan teks saat hover */
     opacity: 1;
-    bottom: -25px; /* Gerakkan teks sedikit ke atas */
+    bottom: -25px;
 }
+
+/* ============================================
+   MOBILE RESPONSIVE - Tablet (max 768px)
+   ============================================ */
+@media (max-width: 768px) {
+
+    /* Navbar */
+    .nav {
+        flex-direction: column;
+        align-items: flex-start;
+        padding-bottom: 8px;
+    }
+
+    .nav h3 {
+        margin-bottom: 0;
+        font-size: 1rem;
+    }
+
+    .nav ul {
+        flex-wrap: wrap;
+        padding: 0 10px;
+        gap: 4px;
+    }
+
+    .nav ul li {
+        margin-right: 12px;
+        margin-top: 6px;
+        margin-bottom: 4px;
+    }
+
+    .nav ul li a {
+        font-size: 0.85rem;
+    }
+
+    /* Hero section - disable fixed bg on mobile (performance) */
+    section#beaner-header {
+        background-attachment: scroll;
+    }
+
+    /* About */
+    section#About p {
+        font-size: 0.95rem;
+    }
+
+    /* Passion / services */
+    section#passion {
+        min-height: auto;
+        padding: 40px 15px;
+    }
+
+    .service-card {
+        flex-basis: 100%;
+        min-width: unset;
+    }
+
+    /* Experience - stack columns vertically */
+    .main-container {
+        flex-direction: column;
+        padding: 10px;
+        gap: 20px;
+    }
+
+    .tech-column {
+        padding-right: 0;
+        text-align: center;
+        min-width: unset;
+    }
+
+    .work-column {
+        padding-left: 0;
+        min-width: unset;
+    }
+
+    .logo-container {
+        margin: 0 auto;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 20px;
+        max-width: 300px;
+    }
+
+    section#experience h2 {
+        font-size: 1.6rem;
+    }
+
+    /* Resume section - disable fixed bg */
+    section#check-my-resume {
+        background-attachment: scroll;
+        min-height: 35vh;
+        padding: 40px 20px;
+    }
+
+    section#check-my-resume h2 {
+        font-size: 1.5rem;
+    }
+
+    /* Portfolio - single column on tablet */
+    .grid-portofolio {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        max-width: 500px;
+    }
+
+    /* Contact */
+    #contact {
+        padding: 60px 20px;
+    }
+
+    #contact h2 {
+        font-size: 1.7rem;
+    }
+
+    /* Modal */
+    .modal-content {
+        width: 95%;
+        margin: 10% auto;
+        padding: 15px;
+    }
+
+    .btn-primary, .btn-secondary {
+        margin: 5px 5px;
+        padding: 8px 15px;
+        font-size: 0.9rem;
+    }
+}
+
+/* ============================================
+   MOBILE RESPONSIVE - Small phones (max 480px)
+   ============================================ */
+@media (max-width: 480px) {
+
+    /* Navbar - hide text labels, keep compact */
+    .nav h3 {
+        font-size: 0.9rem;
+        margin-left: 12px;
+    }
+
+    .nav ul li {
+        margin-right: 8px;
+    }
+
+    .nav ul li a {
+        font-size: 0.8rem;
+    }
+
+    /* Hero */
+    section#beaner-header h1 {
+        font-size: 1.3rem;
+    }
+
+    /* About */
+    section#About h2 {
+        margin-top: 30px;
+        margin-bottom: 20px;
+        font-size: 1.4rem;
+    }
+
+    section#About p {
+        font-size: 0.9rem;
+        line-height: 1.6;
+    }
+
+    .card-container {
+        margin: 25px auto;
+    }
+
+    .card-container h2 {
+        font-size: 1.1rem;
+    }
+
+    /* Passion */
+    section#passion h2 {
+        font-size: 1.4rem;
+        margin-bottom: 25px;
+    }
+
+    .service-card h3 {
+        font-size: 1rem;
+    }
+
+    .service-card p {
+        font-size: 0.875rem;
+    }
+
+    .icon-circle {
+        width: 75px;
+        height: 75px;
+    }
+
+    /* Experience */
+    section#experience h2 {
+        font-size: 1.4rem;
+    }
+
+    .logo-container {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 15px;
+        max-width: 250px;
+    }
+
+    /* Portfolio */
+    section#portofolio h2 {
+        font-size: 1.8rem;
+    }
+
+    /* Contact */
+    #contact h2 {
+        font-size: 1.5rem;
+    }
+
+    .contact-btn {
+        padding: 10px 20px;
+        font-size: 0.9rem;
+    }
+
+    /* Footer */
+    .rocket-text {
+        font-size: 0.7rem;
+    }
+
+    .social-btn {
+        width: 36px;
+        height: 36px;
+        font-size: 1rem;
+    }
+}
+`;
